@@ -1,0 +1,65 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SendDataToIotHub
+{
+    class Sensor
+    {
+        private string _rawData;
+        private DateTime _timeStamp;
+        private int _sampleRate;
+
+        public Sensor()
+        { }
+
+        public Sensor(string rd, DateTime ts, int sr)
+        {
+            RawData = rd;
+            TimeStamp = ts;
+            SampleRate = sr;
+        }
+
+        public string RawData
+        {
+            get
+            {
+                return _rawData;
+            }
+
+            set
+            {
+                _rawData = value;
+            }
+        }
+
+        public DateTime TimeStamp
+        {
+            get
+            {
+                return _timeStamp;
+            }
+
+            set
+            {
+                _timeStamp = value;
+            }
+        }
+
+        public int SampleRate
+        {
+            get
+            {
+                return _sampleRate;
+            }
+
+            set
+            {
+                _sampleRate = value;
+            }
+        }
+    }
+}
+    
