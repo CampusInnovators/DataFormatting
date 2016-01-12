@@ -1,0 +1,60 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SendDataToIotHub
+{
+    class Node
+    {
+        private string _nodeID;
+        private string _nodeType;
+        private List<Sensor> _sensors;
+
+        public Node()
+        { }
+
+        public Node(string nid, string nt, List<Sensor> sensors)
+        {
+            NodeID = nid;
+            NodeType = nt;
+            _sensors = new List<Sensor>(sensors);
+        }
+
+        public string NodeID
+        {
+            get
+            {
+                return _nodeID;
+            }
+
+            set
+            {
+                _nodeID = value;
+            }
+        }
+
+        public string NodeType
+        {
+            get
+            {
+                return _nodeType;
+            }
+
+            set
+            {
+                _nodeType = value;
+            }
+        }
+
+        public Sensor getSensor(int index)
+        {
+            return _sensors.ElementAt<Sensor>(index);
+        }
+        public void setSensor(int index, Sensor sensor)
+        {
+            _sensors.Insert(index, sensor);
+        }
+    }
+}
