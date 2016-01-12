@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SendDataToIotHub
+{
+    class Device
+    {
+        private string _deviceID;
+        private List<Node> _nodes;
+
+        public Device()
+        { }
+
+        public Device(string did, List<Node> nodes)
+        {
+            DeviceID = did;
+            _nodes = new List<Node>(nodes);
+        }
+
+        public string DeviceID
+        {
+            get
+            {
+                return _deviceID;
+            }
+
+            set
+            {
+                _deviceID = value;
+            }
+        }
+
+        public Node getNode(int index)
+        {
+            return _nodes.ElementAt<Node>(index);
+        }
+        public void setNode(int index, Node node)
+        {
+            _nodes.Insert(index, node);
+        }
+    }
+}
